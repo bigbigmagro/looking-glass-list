@@ -89,16 +89,16 @@
 
 | ID | 地点 | 数据中心 | IP地址 | LookingGlass | 
 |----|------|----------|--------|--------------|
-| HOSTDZIRE_INBOM | 印度孟买 | Mumbai | 无 | https://lg-mum-india.hostdzire.com | 
-| HOSTDZIRE_SG | 新加坡 | Singapore | 无 | https://lg-singapore.hostdzire.com/ | 
-| HOSTDZIRE_JPTYO | 日本东京 | Tokyo | 无 | https://lg-tyo-japan.hostdzire.com/ | 
-| HOSTDZIRE_USWDC | 美国华盛顿 | Washington | 无 | https://lg-wdc-usa.hostdzire.com/ | 
-| HOSTDZIRE_USSFO | 美国旧金山 | San Francisco | 无 | https://lg-sfo-usa.hostdzire.com/ | 
-| HOSTDZIRE_USLAX | 美国洛杉矶 | Los Angeles | 无 | https://lg-lax-usa.hostdzire.com/ | 
-| HOSTDZIRE_CAMTL | 加拿大蒙特利尔 | Montreal | 无 | https://lg-mtl-ca.hostdzire.com/ | 
-| HOSTDZIRE_NLAMS | 荷兰阿姆斯特丹 | Amsterdam | 无 | https://lg-ams-nl.hostdzire.com/ | 
-| HOSTDZIRE_DEFRA | 德国法兰克福 | Frankfurt | 无 | https://lg-fra-de.hostdzire.com/ | 
-| HOSTDZIRE_UKLON | 英国伦敦 | London | 无 | https://lg-lon-uk.hostdzire.com/ | 
+| HOSTDZIRE_INBOM | 印度孟买 | Mumbai | nan | https://lg-mum-india.hostdzire.com | 
+| HOSTDZIRE_SG | 新加坡 | Singapore | nan | https://lg-singapore.hostdzire.com/ | 
+| HOSTDZIRE_JPTYO | 日本东京 | Tokyo | nan | https://lg-tyo-japan.hostdzire.com/ | 
+| HOSTDZIRE_USWDC | 美国华盛顿 | Washington | nan | https://lg-wdc-usa.hostdzire.com/ | 
+| HOSTDZIRE_USSFO | 美国旧金山 | San Francisco | nan | https://lg-sfo-usa.hostdzire.com/ | 
+| HOSTDZIRE_USLAX | 美国洛杉矶 | Los Angeles | nan | https://lg-lax-usa.hostdzire.com/ | 
+| HOSTDZIRE_CAMTL | 加拿大蒙特利尔 | Montreal | nan | https://lg-mtl-ca.hostdzire.com/ | 
+| HOSTDZIRE_NLAMS | 荷兰阿姆斯特丹 | Amsterdam | nan | https://lg-ams-nl.hostdzire.com/ | 
+| HOSTDZIRE_DEFRA | 德国法兰克福 | Frankfurt | nan | https://lg-fra-de.hostdzire.com/ | 
+| HOSTDZIRE_UKLON | 英国伦敦 | London | nan | https://lg-lon-uk.hostdzire.com/ | 
 
 
 ### OVH
@@ -140,10 +140,10 @@
 
 | ID | 地点 | 数据中心 | IP地址 | LookingGlass | 
 |----|------|----------|--------|--------------|
-| ORANGE_SG | 新加坡 | Singapore | 无 | https://sg-lg.orangevps.com | 
-| ORANGE_USKC | 美国堪萨斯城 | Kansas City | 无 | https://kcmo-lg.orangevps.com | 
-| ORANGE_HK | 中国香港 | Hong Kong | 无 | https://hk-lg.orangevps.com | 
-| ORANGE_HKPREM | 中国香港 | Hong Kong (Premium) | 无 | https://hk-premium-lg.orangevps.com | 
+| ORANGE_SG | 新加坡 | Singapore | nan | https://sg-lg.orangevps.com | 
+| ORANGE_USKC | 美国堪萨斯城 | Kansas City | nan | https://kcmo-lg.orangevps.com | 
+| ORANGE_HK | 中国香港 | Hong Kong | nan | https://hk-lg.orangevps.com | 
+| ORANGE_HKPREM | 中国香港 | Hong Kong (Premium) | nan | https://hk-premium-lg.orangevps.com | 
 
 
 ### RN

@@ -83,20 +83,20 @@ CLAW_VA,美国弗吉尼亚,Virginia BGP,47.253.157.212,https://lg.us-east-1.claw
 CLAW_CA,美国加州,California BGP,47.251.75.195,https://lg.us-west-1.claw.cloud/,CLAW
 CLAW_LON,英国伦敦,London BGP,8.208.44.202,https://lg.eu-west-1.claw.cloud/,CLAW
 CLAW_JKT,印度尼西亚雅加达,Jakarta BGP,147.139.193.80,https://lg.ap-southeast-5.claw.cloud/,CLAW
-ORANGE_SG,新加坡,Singapore,无,https://sg-lg.orangevps.com,OrangeVPS
-ORANGE_USKC,美国堪萨斯城,Kansas City,无,https://kcmo-lg.orangevps.com,OrangeVPS
-ORANGE_HK,中国香港,Hong Kong,无,https://hk-lg.orangevps.com,OrangeVPS
-ORANGE_HKPREM,中国香港,Hong Kong (Premium),无,https://hk-premium-lg.orangevps.com,OrangeVPS
-HOSTDZIRE_INBOM,印度孟买,Mumbai,无,https://lg-mum-india.hostdzire.com,HostDzire
-HOSTDZIRE_SG,新加坡,Singapore,无,https://lg-singapore.hostdzire.com/,HostDzire
-HOSTDZIRE_JPTYO,日本东京,Tokyo,无,https://lg-tyo-japan.hostdzire.com/,HostDzire
-HOSTDZIRE_USWDC,美国华盛顿,Washington,无,https://lg-wdc-usa.hostdzire.com/,HostDzire
-HOSTDZIRE_USSFO,美国旧金山,San Francisco,无,https://lg-sfo-usa.hostdzire.com/,HostDzire
-HOSTDZIRE_USLAX,美国洛杉矶,Los Angeles,无,https://lg-lax-usa.hostdzire.com/,HostDzire
-HOSTDZIRE_CAMTL,加拿大蒙特利尔,Montreal,无,https://lg-mtl-ca.hostdzire.com/,HostDzire
-HOSTDZIRE_NLAMS,荷兰阿姆斯特丹,Amsterdam,无,https://lg-ams-nl.hostdzire.com/,HostDzire
-HOSTDZIRE_DEFRA,德国法兰克福,Frankfurt,无,https://lg-fra-de.hostdzire.com/,HostDzire
-HOSTDZIRE_UKLON,英国伦敦,London,无,https://lg-lon-uk.hostdzire.com/,HostDzire
+ORANGE_SG,新加坡,Singapore,,https://sg-lg.orangevps.com,OrangeVPS
+ORANGE_USKC,美国堪萨斯城,Kansas City,,https://kcmo-lg.orangevps.com,OrangeVPS
+ORANGE_HK,中国香港,Hong Kong,,https://hk-lg.orangevps.com,OrangeVPS
+ORANGE_HKPREM,中国香港,Hong Kong (Premium),,https://hk-premium-lg.orangevps.com,OrangeVPS
+HOSTDZIRE_INBOM,印度孟买,Mumbai,,https://lg-mum-india.hostdzire.com,HostDzire
+HOSTDZIRE_SG,新加坡,Singapore,,https://lg-singapore.hostdzire.com/,HostDzire
+HOSTDZIRE_JPTYO,日本东京,Tokyo,,https://lg-tyo-japan.hostdzire.com/,HostDzire
+HOSTDZIRE_USWDC,美国华盛顿,Washington,,https://lg-wdc-usa.hostdzire.com/,HostDzire
+HOSTDZIRE_USSFO,美国旧金山,San Francisco,,https://lg-sfo-usa.hostdzire.com/,HostDzire
+HOSTDZIRE_USLAX,美国洛杉矶,Los Angeles,,https://lg-lax-usa.hostdzire.com/,HostDzire
+HOSTDZIRE_CAMTL,加拿大蒙特利尔,Montreal,,https://lg-mtl-ca.hostdzire.com/,HostDzire
+HOSTDZIRE_NLAMS,荷兰阿姆斯特丹,Amsterdam,,https://lg-ams-nl.hostdzire.com/,HostDzire
+HOSTDZIRE_DEFRA,德国法兰克福,Frankfurt,,https://lg-fra-de.hostdzire.com/,HostDzire
+HOSTDZIRE_UKLON,英国伦敦,London,,https://lg-lon-uk.hostdzire.com/,HostDzire
 AKILE_DE,德国,de,156.226.175.216,https://lg.de.akile.io,Akile
 AKILE_HKB,中国香港,hkb,85.208.104.41,https://lg.hkb.akile.io,Akile
 AKILE_HKL,中国香港,hkl,38.6.219.116,https://lg.hkl.akile.io,Akile
