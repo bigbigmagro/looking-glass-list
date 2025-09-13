@@ -7,9 +7,7 @@
 ### Akile
 
 | ID | 地点 | 数据中心 | IP地址 | LookingGlass | |
-
 |----|------|----------|--------|--------------|----|
-
 | AKILE_DE | 德国 | de | 156.226.175.216 | https://lg.de.akile.io | Akile |
 | AKILE_HKB | 中国香港 | hkb | 85.208.104.41 | https://lg.hkb.akile.io | Akile |
 | AKILE_HKL | 中国香港 | hkl | 38.6.219.116 | https://lg.hkl.akile.io | Akile |
@@ -30,9 +28,7 @@
 ### BWG
 
 | ID | 地点 | 数据中心 | IP地址 | LookingGlass | |
-
 |----|------|----------|--------|--------------|----|
-
 | BWG_HKHK_3 | 中国香港 | 香港 HK85 | 45.78.18.149 | nan | BWG |
 | BWG_HKHK_8 | 中国香港 | 香港 CN2 GIA | 93.179.124.115 | nan | BWG |
 | BWG_JPOS_1 | 日本大阪 | 日本大阪 软银 | 185.212.59.222 | jpos.bwg.net | BWG |
@@ -59,9 +55,7 @@
 ### CLAW
 
 | ID | 地点 | 数据中心 | IP地址 | LookingGlass | |
-
 |----|------|----------|--------|--------------|----|
-
 | CLAW_HK_CN | 中国香港 | HK BGP CN | 47.238.150.244 | https://lg.cn-hongkong.claw.cloud/ | CLAW |
 | CLAW_TYO_CN | 日本东京 | Tokyo BGP CN | 47.74.34.123 | https://lg.ap-northeast-1.claw.cloud/ | CLAW |
 | CLAW_SG_CN | 新加坡 | Singapore BGP CN | 8.219.195.163 | https://lg.ap-southeast-1.claw.cloud/ | CLAW |
@@ -78,9 +72,7 @@
 ### DMIT
 
 | ID | 地点 | 数据中心 | IP地址 | LookingGlass | |
-
 |----|------|----------|--------|--------------|----|
-
 | DMIT_LAX1 | 美国洛杉矶 | Los Angeles Premium Secure (spro) | 45.88.194.187[2605:52c0:2:d94:c89f:c5ff:fe12:28d] | lax-spro.lg.dmit.sh:8443[lax-spro-v6.lg.dmit.sh:8443] | DMIT |
 | DMIT_LAX2 | 美国洛杉矶 | Los Angeles Pro | 154.17.30.96[2605:52c0:2:d96:942f:3fff:fedf:1746] | lax-pro.lg.dmit.sh:8443[lax-pro-v6.lg.dmit.sh:8443] | DMIT |
 | DMIT_LAX3 | 美国洛杉矶 | Los Angeles Eyeball (eb) | 154.17.229.24[2605:52c0:1:5ab:bc19:5dff:fe37:3474] | lax-eb.lg.dmit.sh:8443[lax-eb-v6.lg.dmit.sh:8443] | DMIT |
@@ -96,9 +88,7 @@
 ### HostDzire
 
 | ID | 地点 | 数据中心 | IP地址 | LookingGlass | |
-
 |----|------|----------|--------|--------------|----|
-
 | HOSTDZIRE_INBOM | 印度孟买 | Mumbai | 无 | https://lg-mum-india.hostdzire.com | HostDzire |
 | HOSTDZIRE_SG | 新加坡 | Singapore | 无 | https://lg-singapore.hostdzire.com/ | HostDzire |
 | HOSTDZIRE_JPTYO | 日本东京 | Tokyo | 无 | https://lg-tyo-japan.hostdzire.com/ | HostDzire |
@@ -114,9 +104,7 @@
 ### OVH
 
 | ID | 地点 | 数据中心 | IP地址 | LookingGlass | |
-
 |----|------|----------|--------|--------------|----|
-
 | OVH_ATL | 美国亚特兰大 | Atlanta | 40.160.238.154 | nan | OVH |
 | OVH_BOS | 美国波士顿 | Boston | 40.160.242.117 | nan | OVH |
 | OVH_CHI | 美国芝加哥 | Chicago | 40.160.228.7 | nan | OVH |
@@ -151,9 +139,7 @@
 ### OrangeVPS
 
 | ID | 地点 | 数据中心 | IP地址 | LookingGlass | |
-
 |----|------|----------|--------|--------------|----|
-
 | ORANGE_SG | 新加坡 | Singapore | 无 | https://sg-lg.orangevps.com | OrangeVPS |
 | ORANGE_USKC | 美国堪萨斯城 | Kansas City | 无 | https://kcmo-lg.orangevps.com | OrangeVPS |
 | ORANGE_HK | 中国香港 | Hong Kong | 无 | https://hk-lg.orangevps.com | OrangeVPS |
@@ -163,9 +149,7 @@
 ### RN
 
 | ID | 地点 | 数据中心 | IP地址 | LookingGlass | |
-
 |----|------|----------|--------|--------------|----|
-
 | RN_LA2 | 美国洛杉矶 | LA DC2 | 204.13.154.3 | http://lg-lax02.racknerd.com | RN |
 | RN_LA3 | 美国洛杉矶 | LA DC3 | 107.174.51.158 | http://lg-lax03.racknerd.com | RN |
 | RN_CA | 美国圣何塞 | CA | 192.210.207.88 | http://lg-sj.racknerd.com | RN |
