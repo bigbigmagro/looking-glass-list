@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Looking Glass List | LG 大全</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Grid.js -->
+    <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+    <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+
+    <!-- PapaParse -->
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
+    <!-- Vue 3 -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+
+    <style>
+      body { background: #ffffff; }
+      #table .gridjs-th, #table .gridjs-td { white-space: nowrap; }
+      .table-wrap { overflow-x: auto; }
+    </style>
+  </head>
+  <body class="text-slate-900">
+    <div id="app" class="max-w-7xl mx-auto p-4">
+      <header class="mb-6 flex justify-between items-center">
+        <div>
+          <h1 class="text-2xl font-semibold">Looking Glass List | LG 大全</h1>
+        </div>
+        <div class="topbar flex gap-4 text-sm">
+          <a href="https://github.com/vpslog/looking-glass-list" target="_blank" class="text-2xl text-blue-600 hover:underline">GitHub</a>
+          <a href="https://t.me/vpslognet" target="_blank" class="text-2xl text-blue-600 hover:underline">Telegram</a>
+        </div>
+      </header>
+      <section class="mb-4">
+        <div class="flex flex-wrap gap-2 justify-between items-center">
+          <input v-model="filterText" class="rounded border p-2 flex-1 min-w-[200px]" placeholder="全局搜索" />
+          <div class="flex gap-2 items-center">
+            <input v-model="localPingUrl" class="rounded border p-2 w-56" placeholder="http://127.0.0.1:5005" />
+            <button @click="syncLocalPing" class="px-3 py-2 rounded bg-green-600 text-white hover:bg-green-700">同步</button>
+          </div>
+          <select v-model="pageSize" class="rounded border p-2">
+            <option value="10">10 / 页</option>
+            <option value="25">25 / 页</option>
+            <option value="50">50 / 页</option>
+            <option value="100">100 / 页</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="table-wrap bg-white rounded shadow p-4">
+        <div id="table"></div>
+        <div v-if="error" class="mt-3 text-red-600">错误：{{ error }}</div>
+        <div v-if="loading" class="mt-3 text-slate-600">加载中...</div>
+      </section>
+    </div>
+
+    <script>
+      const { createApp } = Vue;
+
+      createApp({
+        data() {
+          return {
+            csvUrl: 'https://raw.githubusercontent.com/vpslog/looking-glass-list/refs/heads/main/lg.csv',
+            localPingUrl: 'http://127.0.0.1:5005',
+            columns: [],
+            rows: [],
+            localPingList: [],
+            grid: null,
+            error: '',
+            loading: false,
+            filterText: '',
+            pageSize: 25,
+          };
+        },
+        watch: {
+          filterText() { this.applyGridOptions(); },
+          pageSize() { this.applyGridOptions(); }
+        },
+        methods: {
+          async loadCsv() {
+            this.error = '';
+            this.loading = true;
+            try {
+              const res = await fetch(this.csvUrl);
+              if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
+              const text = await res.text();
+              const parsed = Papa.parse(text, { header: true, skipEmptyLines: true });
+              this.columns = parsed.meta.fields || [];
+              // 加入“添加监控”列
+              if (!this.columns.includes('添加监控')) {
+                this.columns.push('添加监控');
+              }
+              this.rows = parsed.data.map(r => this.columns.map(c => {
+                if (c === '添加监控') return r.ipaddress;
+                return r[c] ?? '';
+              }));
+              this.renderGrid();
+            } catch (err) {
+              this.error = err.message;
+            } finally {
+              this.loading = false;
+            }
+          },
+          async syncLocalPing() {
+            try {
+              const res = await fetch(`${this.localPingUrl}/server`);
+              if (!res.ok) throw new Error(`本地服务错误 ${res.status}`);
+              const text = await res.text();
+              const parsed = Papa.parse(text, { header: true, skipEmptyLines: true });
+              this.localPingList = parsed.data || [];
+              this.renderGrid();
+            } catch (err) {
+              console.error(err);
+              this.error = '同步 Local-Ping 失败: ' + err.message;
+            }
+          },
+          async addToLocalPing(rowObj) {
+            const payload = {
+              ip: rowObj.ipaddress,
+              name: rowObj.ID,
+              desc: `${rowObj.provider} ${rowObj.Location} ${rowObj.Datacenter}`,
+            };
+            try {
+              const res = await fetch(`${this.localPingUrl}/server`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload),
+              });
+              if (!res.ok) throw new Error('PUT 失败');
+              await this.syncLocalPing();
+            } catch (err) {
+              alert('添加失败: ' + err.message);
+            }
+          },
+          renderGrid() {
+            if (this.grid) {
+              try { this.grid.destroy(); } catch(e){}
+              this.grid = null;
+            }
+
+            const gridCols = this.columns.map(c => ({
+              name: c,
+              formatter: (cell, row) => {
+                if (c === '添加监控') {
+                  const ip = row.cells[row.cells.length-1].data;
+                  const exists = this.localPingList.some(l => l.ip === ip);
+                  if (exists) {
+                    return gridjs.html(`<span class='text-green-600'>已添加</span>`);
+                  } else {
+                    return gridjs.html(`<button class='px-2 py-1 bg-blue-600 text-white rounded' onclick="window.__addMonitor('${ip}')">添加</button>`);
+                  }
+                }
+                if (c === 'lookingglass' && cell) {
+                  return gridjs.html(`<a href="${cell}" target="_blank" class="text-blue-600 underline">${cell}</a>`);
+                }
+                return cell;
+              }
+            }));
+
+            let displayRows = this.rows;
+            if (this.filterText) {
+              const q = this.filterText.toLowerCase();
+              displayRows = this.rows.filter(r => r.join(' ').toLowerCase().includes(q));
+            }
+
+            this.grid = new gridjs.Grid({
+              columns: gridCols,
+              data: displayRows,
+              pagination: { enabled: true, limit: Number(this.pageSize) },
+              sort: true,
+              search: false,
+              resizable: true,
+              style: { table: { width: '100%' } }
+            }).render(document.getElementById('table'));
+          },
+          applyGridOptions() {
+            this.renderGrid();
+          }
+        },
+        mounted() {
+          window.__addMonitor = async (ip) => {
+            const rowIdx = this.rows.findIndex(r => r[this.columns.indexOf('ipaddress')] === ip);
+            if (rowIdx === -1) return;
+            const obj = {};
+            this.columns.forEach((c, i) => { obj[c] = this.rows[rowIdx][i]; });
+            this.addToLocalPing(obj);
+          };
+          this.loadCsv();
+        }
+      }).mount('#app');
+    </script>
+  </body>
+</html>
